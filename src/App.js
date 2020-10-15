@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
     
-    const [logoSrc, setLogoSrc] = useState('');
+    const [logoSrc, setLogoSrc] = useState(logo1);
     
     const changeSrc = () => {
         if (logoSrc === logo1)
@@ -20,7 +20,7 @@ function App() {
     return (
         <div className="App">
             <h1>Hello world !</h1>
-            <button onClick={changeSrc}>Toggle logo</button>
+            <button className="btn" onClick={changeSrc}>Toggle logo</button>
             <Logo logoSrc={logoSrc}/>
         </div>
     );
@@ -28,7 +28,9 @@ function App() {
 
 function Logo(props) {
     return (
-        <img src={props.logoSrc} alt={'logo'}/>
+        <div>
+            <img src={props.logoSrc} alt={'logo'}/>
+        </div>
     );
 }
 
